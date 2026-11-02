@@ -1,7 +1,8 @@
-﻿import {
+import { useState } from "react";
+import {
   Activity, LayoutDashboard, Map, ShieldAlert, Sparkles,
   BrainCircuit, FileText, Settings, Bell, Search,
-  ArrowUpRight, Radio, Database, Cpu, ChevronRight
+  ArrowUpRight, Radio, Database, Cpu, ChevronRight, LogOut
 } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
 import {
@@ -26,6 +27,15 @@ const modelData = [
 
 export default function Dashboard() {
   const navigate = useNavigate();
+  const [profileOpen, setProfileOpen] = useState(false);
+
+  const user = JSON.parse(localStorage.getItem("user") || "null");
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/login", { replace: true });
+  };
 
   const metrics = [
     { label: "Test ROC-AUC", value: "89.87%", detail: "HistGradientBoosting", icon: Activity },
@@ -75,10 +85,13 @@ export default function Dashboard() {
           <button className="nav-item settings-item" onClick={() => navigate("/settings")}>
             <Settings size={18} /><span>Settings</span>
           </button>
-          <div className="profile">
-            <div className="avatar">DM</div>
-            <div><strong>DisasterMind</strong><small>Research Workspace</small></div>
-          </div>
+          <button className="profile sidebar-profile" onClick={() => setProfileOpen(!profileOpen)}>
+            <div className="avatar">{user?.name?.charAt(0)?.toUpperCase() || "U"}</div>
+            <div>
+              <strong>{user?.name || "Guest User"}</strong>
+              <small>{user?.email || "Not signed in"}</small>
+            </div>
+          </button>
         </div>
       </aside>
 
@@ -89,7 +102,27 @@ export default function Dashboard() {
             <div className="engine-status"><span className="status-dot" /> AI Engine configured</div>
             <button className="icon-button" aria-label="Search"><Search size={18} /></button>
             <button className="icon-button" aria-label="Notifications"><Bell size={18} /></button>
-            <div className="top-avatar">DM</div>
+            <div className="profile-menu">
+              <button
+                className="top-avatar"
+                aria-label="Open profile menu"
+                onClick={() => setProfileOpen(!profileOpen)}
+              >
+                {user?.name?.charAt(0)?.toUpperCase() || "U"}
+              </button>
+
+              {profileOpen && (
+                <div className="profile-dropdown">
+                  <div className="profile-dropdown-info">
+                    <strong>{user?.name || "Guest User"}</strong>
+                    <small>{user?.email || "Not signed in"}</small>
+                  </div>
+                  <button onClick={handleLogout} className="profile-logout">
+                    <LogOut size={16} /> Logout
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </header>
 
@@ -118,7 +151,7 @@ export default function Dashboard() {
               <div className="globe"><Activity size={58} strokeWidth={1.1} /></div>
               <div className="visual-label label-top">EARTH SYSTEMS</div>
               <div className="visual-label label-bottom">DATA-DRIVEN INSIGHTS</div>
-              <div className="visual-coordinate">20.50° N<br />79.20° E</div>
+              <div className="visual-coordinate">20.50{"\u00B0"} N<br />79.20{"\u00B0"} E</div>
             </div>
           </section>
 
@@ -178,3 +211,4 @@ export default function Dashboard() {
     </div>
   );
 }
+

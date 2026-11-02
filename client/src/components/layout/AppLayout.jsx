@@ -1,8 +1,8 @@
-﻿import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   Activity, LayoutDashboard, Map, ShieldAlert,
   Sparkles, BrainCircuit, FileText, Settings,
-  Bell, Search, ChevronRight
+  Bell, Search, ChevronRight, ChartNoAxesCombined
 } from "lucide-react";
 
 const navigation = [
@@ -10,6 +10,7 @@ const navigation = [
   { name: "Disaster Map", icon: Map, path: "/disaster-map" },
   { name: "Risk Analysis", icon: ShieldAlert, path: "/risk-analysis" },
   { name: "Scenario Generator", icon: Sparkles, path: "/scenario-generator" },
+  { name: "Probabilistic Models", icon: ChartNoAxesCombined, path: "/probabilistic-models" },
   { name: "Deep Learning Lab", icon: BrainCircuit, path: "/deep-learning" },
   { name: "Reports", icon: FileText, path: "/reports" }
 ];
@@ -36,9 +37,7 @@ export default function AppLayout({ children }) {
               key={name}
               to={path}
               end={path === "/"}
-              className={({ isActive }) =>
-                `nav-item ${isActive ? "active" : ""}`
-              }
+              className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}
             >
               <Icon size={18} />
               <span>{name}</span>
@@ -59,9 +58,10 @@ export default function AppLayout({ children }) {
 
           <button
             className="nav-item settings-item"
-            onClick={() => navigate("/settings")}
+            onClick={() => navigate("/login")}
           >
-            <Settings size={18} /><span>Settings</span>
+            <Settings size={18} />
+            <span>Account</span>
           </button>
 
           <div className="profile">
@@ -91,7 +91,13 @@ export default function AppLayout({ children }) {
             <button className="icon-button" aria-label="Notifications">
               <Bell size={18} />
             </button>
-            <div className="top-avatar">DM</div>
+            <button
+              className="top-avatar"
+              aria-label="Open login"
+              onClick={() => navigate("/login")}
+            >
+              DM
+            </button>
           </div>
         </header>
 

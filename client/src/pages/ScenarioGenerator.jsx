@@ -216,7 +216,7 @@ export default function ScenarioGenerator() {
 
           <div className="scenario-location-note">
             <MapPin size={17} />
-            <span>The selected coordinates identify a 2° × 2° display grid. They do not condition the generator's sampling.</span>
+            <span>The selected coordinates identify a 2ï¿½ ï¿½ 2ï¿½ display grid. They do not condition the generator's sampling.</span>
           </div>
 
           {error && (
@@ -267,9 +267,9 @@ export default function ScenarioGenerator() {
               </div>
 
               <div className="scenario-grid-info">
-                <span>SELECTED 2° × 2° GRID</span>
-                <strong>{records[0]?.latitude_range?.[0]}°–{records[0]?.latitude_range?.[1]}° N/S</strong>
-                <strong>{records[0]?.longitude_range?.[0]}°–{records[0]?.longitude_range?.[1]}° E/W</strong>
+                <span>SELECTED 2ï¿½ ï¿½ 2ï¿½ GRID</span>
+                <strong>{records[0]?.latitude_range?.[0]}ï¿½ï¿½{records[0]?.latitude_range?.[1]}ï¿½ N/S</strong>
+                <strong>{records[0]?.longitude_range?.[0]}ï¿½ï¿½{records[0]?.longitude_range?.[1]}ï¿½ E/W</strong>
               </div>
 
               <div className="scenario-disclaimer">
@@ -360,8 +360,8 @@ export default function ScenarioGenerator() {
                   {records.slice(0, 100).map((item) => (
                     <tr key={item.scenario_id}>
                       <td>#{item.scenario_id}</td>
-                      <td>{item.grid_lat}°</td>
-                      <td>{item.grid_lon}°</td>
+                      <td>{item.grid_lat}ï¿½</td>
+                      <td>{item.grid_lon}ï¿½</td>
                       <td>{item.past_1m_count}</td>
                       <td>{item.past_3m_count}</td>
                       <td>{item.past_6m_count}</td>

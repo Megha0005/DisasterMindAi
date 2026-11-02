@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { Activity, MapPin, CalendarDays, Waves, AlertTriangle, LoaderCircle, ShieldCheck } from "lucide-react";
 import { aiService } from "../services/aiService";
 
@@ -138,9 +138,9 @@ export default function RiskAnalysis() {
               <div className="result-row"><span>Model</span><strong>{result.model}</strong></div>
               <div className="result-row"><span>Prediction horizon</span><strong>{result.prediction_horizon}</strong></div>
               <div className="grid-result">
-                <span>2° × 2° GRID CELL</span>
-                <strong>{result.grid_cell.latitude_range[0]}°–{result.grid_cell.latitude_range[1]}° N/S</strong>
-                <strong>{result.grid_cell.longitude_range[0]}°–{result.grid_cell.longitude_range[1]}° E/W</strong>
+                <span>2{"\u00B0"} × 2{"\u00B0"} GRID CELL</span>
+                <strong>{result.grid_cell.latitude_range[0]}{"\u00B0"}–{result.grid_cell.latitude_range[1]}{"\u00B0"} N/S</strong>
+                <strong>{result.grid_cell.longitude_range[0]}{"\u00B0"}–{result.grid_cell.longitude_range[1]}{"\u00B0"} E/W</strong>
               </div>
               <div className="result-disclaimer">{result.disclaimer}</div>
             </div>

@@ -7,13 +7,13 @@
     "dev": "nodemon src/server.js"
   },
   "dependencies": {
-    "bcryptjs": "latest",
+    "bcryptjs": "^3.0.3",
     "cors": "latest",
     "dotenv": "latest",
     "express": "latest",
     "express-rate-limit": "latest",
     "helmet": "latest",
-    "jsonwebtoken": "latest",
+    "jsonwebtoken": "^9.0.3",
     "mongoose": "latest"
   },
   "devDependencies": {
