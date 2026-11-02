@@ -1,0 +1,9 @@
+{
+    "model": "ConditionalCountGenerator",
+    "minimum_support": 30,
+    "random_state": 42,
+    "training_rows": 1018368,
+    "conditional_3m_groups": 85,
+    "conditional_1m_groups": 292,
+    "verification_samples": 10000
+}

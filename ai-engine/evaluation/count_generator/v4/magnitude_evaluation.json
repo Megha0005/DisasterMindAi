@@ -1,0 +1,26 @@
+{
+    "recent": {
+        "validation_positive_samples": 16672,
+        "actual_mean": 2.8198776391554703,
+        "predicted_mean": 1.908390482038978,
+        "model_mae": 1.6001647799000016,
+        "baseline_mae": 2.216579157649481,
+        "r2": 0.02880977595087819
+    },
+    "previous": {
+        "validation_positive_samples": 24605,
+        "actual_mean": 3.808250355618777,
+        "predicted_mean": 2.4231948698957027,
+        "model_mae": 2.237391497887966,
+        "baseline_mae": 3.332552233771288,
+        "r2": 0.06986669042434512
+    },
+    "older": {
+        "validation_positive_samples": 30210,
+        "actual_mean": 4.57530619000331,
+        "predicted_mean": 2.83227891594957,
+        "model_mae": 2.729308758040812,
+        "baseline_mae": 4.234471814970994,
+        "r2": 0.10209180738888057
+    }
+}

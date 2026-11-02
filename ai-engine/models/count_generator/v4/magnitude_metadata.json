@@ -1,0 +1,20 @@
+{
+    "recent": {
+        "model": "recent_magnitude_model.joblib",
+        "target_transform": "log1p",
+        "training_observations": 80432,
+        "training_period": "2000-2016"
+    },
+    "previous": {
+        "model": "previous_magnitude_model.joblib",
+        "target_transform": "log1p",
+        "training_observations": 120915,
+        "training_period": "2000-2016"
+    },
+    "older": {
+        "model": "older_magnitude_model.joblib",
+        "target_transform": "log1p",
+        "training_observations": 149912,
+        "training_period": "2000-2016"
+    }
+}

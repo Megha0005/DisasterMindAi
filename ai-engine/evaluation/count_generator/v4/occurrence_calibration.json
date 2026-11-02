@@ -1,0 +1,146 @@
+{
+    "recent": {
+        "actual_rate": 0.10641339869281045,
+        "mean_predicted_probability": 0.3199751334289256,
+        "brier_score": 0.12143118563084512,
+        "log_loss": 0.3925291282310585,
+        "calibration_bins": [
+            {
+                "predicted_probability": 0.04231275061633832,
+                "actual_frequency": 0.007517838939857288
+            },
+            {
+                "predicted_probability": 0.07600383052239161,
+                "actual_frequency": 0.006385696040868455
+            },
+            {
+                "predicted_probability": 0.11676834808900308,
+                "actual_frequency": 0.01206896551724138
+            },
+            {
+                "predicted_probability": 0.16270007508312515,
+                "actual_frequency": 0.01194125159642401
+            },
+            {
+                "predicted_probability": 0.21231523017962786,
+                "actual_frequency": 0.01807151979565773
+            },
+            {
+                "predicted_probability": 0.2818184795738896,
+                "actual_frequency": 0.033384301732925586
+            },
+            {
+                "predicted_probability": 0.35557595694909305,
+                "actual_frequency": 0.05906768837803321
+            },
+            {
+                "predicted_probability": 0.4689029391432451,
+                "actual_frequency": 0.11334610472541506
+            },
+            {
+                "predicted_probability": 0.620746071082511,
+                "actual_frequency": 0.19099616858237548
+            },
+            {
+                "predicted_probability": 0.8633336738239293,
+                "actual_frequency": 0.611749680715198
+            }
+        ]
+    },
+    "previous": {
+        "actual_rate": 0.15704784517973855,
+        "mean_predicted_probability": 0.35088273794260233,
+        "brier_score": 0.12774309529727487,
+        "log_loss": 0.40844982542972896,
+        "calibration_bins": [
+            {
+                "predicted_probability": 0.05129410521943508,
+                "actual_frequency": 0.014143730886850153
+            },
+            {
+                "predicted_probability": 0.09157086949450141,
+                "actual_frequency": 0.014112388250319284
+            },
+            {
+                "predicted_probability": 0.13810092323743772,
+                "actual_frequency": 0.01922094508301405
+            },
+            {
+                "predicted_probability": 0.18953789026387696,
+                "actual_frequency": 0.02362707535121328
+            },
+            {
+                "predicted_probability": 0.24908186763595372,
+                "actual_frequency": 0.036079182630906766
+            },
+            {
+                "predicted_probability": 0.3229112715013713,
+                "actual_frequency": 0.058613659531090725
+            },
+            {
+                "predicted_probability": 0.4079568654089674,
+                "actual_frequency": 0.11711366538952746
+            },
+            {
+                "predicted_probability": 0.5202921520243649,
+                "actual_frequency": 0.19278416347381866
+            },
+            {
+                "predicted_probability": 0.6591341791824188,
+                "actual_frequency": 0.33697318007662835
+            },
+            {
+                "predicted_probability": 0.8797002671799288,
+                "actual_frequency": 0.7583652618135377
+            }
+        ]
+    },
+    "older": {
+        "actual_rate": 0.19282322303921567,
+        "mean_predicted_probability": 0.37068232159720343,
+        "brier_score": 0.13256992231705175,
+        "log_loss": 0.42111588912556897,
+        "calibration_bins": [
+            {
+                "predicted_probability": 0.056863302798894975,
+                "actual_frequency": 0.02484709480122324
+            },
+            {
+                "predicted_probability": 0.10253158471787864,
+                "actual_frequency": 0.01896551724137931
+            },
+            {
+                "predicted_probability": 0.15343685739296037,
+                "actual_frequency": 0.02458492975734355
+            },
+            {
+                "predicted_probability": 0.21058265730042316,
+                "actual_frequency": 0.03646232439335888
+            },
+            {
+                "predicted_probability": 0.27405261057178354,
+                "actual_frequency": 0.049233716475095786
+            },
+            {
+                "predicted_probability": 0.35295909520511337,
+                "actual_frequency": 0.09085117227319062
+            },
+            {
+                "predicted_probability": 0.4392793732363158,
+                "actual_frequency": 0.1710089399744572
+            },
+            {
+                "predicted_probability": 0.5493040222218881,
+                "actual_frequency": 0.2462962962962963
+            },
+            {
+                "predicted_probability": 0.6785312017978,
+                "actual_frequency": 0.43103448275862066
+            },
+            {
+                "predicted_probability": 0.8900446768098438,
+                "actual_frequency": 0.8355683269476373
+            }
+        ]
+    }
+}

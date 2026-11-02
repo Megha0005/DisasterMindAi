@@ -1,0 +1,39 @@
+{
+    "model": "IncrementGenerator",
+    "version": "V3",
+    "training_rows": 1018368,
+    "validation_rows": 156672,
+    "unique_increment_tuples": 9336,
+    "distribution_results": {
+        "past_1m_count": {
+            "validation_mean": 0.30007276348039214,
+            "synthetic_mean": 0.2522658803104575,
+            "validation_std": 2.612797591832043,
+            "synthetic_std": 2.816999658420922,
+            "validation_p99": 6.0,
+            "synthetic_p99": 5.0,
+            "ks_statistic": 0.012719999999999954
+        },
+        "past_3m_count": {
+            "validation_mean": 0.8981502757352942,
+            "synthetic_mean": 0.753695618872549,
+            "validation_std": 5.664256775040276,
+            "synthetic_std": 5.7850096118530825,
+            "validation_p99": 16.0,
+            "synthetic_p99": 13.0,
+            "ks_statistic": 0.018000000000000016
+        },
+        "past_6m_count": {
+            "validation_mean": 1.7803755616830066,
+            "synthetic_mean": 1.5178270526960784,
+            "validation_std": 9.366311902376673,
+            "synthetic_std": 10.04510899005034,
+            "validation_p99": 33.0,
+            "synthetic_p99": 26.0,
+            "ks_statistic": 0.02173999999999998
+        }
+    },
+    "mean_absolute_off_diagonal_correlation_difference": 0.05351002058609753,
+    "hierarchy_valid": true,
+    "evaluation_type": "Unseen temporal validation"
+}

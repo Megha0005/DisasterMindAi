@@ -1,0 +1,29 @@
+{
+    "version": "V4",
+    "features": [
+        "grid_lat",
+        "grid_lon"
+    ],
+    "base_training_period": "2000-2016",
+    "calibration_period": "2017-2019",
+    "targets": {
+        "recent": {
+            "model": "recent_occurrence_model.joblib",
+            "calibrator": "recent_calibrator.joblib",
+            "training_positive_rate": 0.09334150326797386,
+            "calibration_positive_rate": 0.09972426470588236
+        },
+        "previous": {
+            "model": "previous_occurrence_model.joblib",
+            "calibrator": "previous_calibrator.joblib",
+            "training_positive_rate": 0.14032210895721925,
+            "calibration_positive_rate": 0.14893535539215685
+        },
+        "older": {
+            "model": "older_occurrence_model.joblib",
+            "calibrator": "older_calibrator.joblib",
+            "training_positive_rate": 0.17397318775995246,
+            "calibration_positive_rate": 0.18439797794117646
+        }
+    }
+}

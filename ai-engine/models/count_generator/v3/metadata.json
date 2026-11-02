@@ -1,0 +1,8 @@
+{
+    "model": "IncrementGenerator",
+    "version": "V3",
+    "random_state": 42,
+    "training_rows": 1018368,
+    "unique_increment_tuples": 9336,
+    "verification_samples": 10000
+}
