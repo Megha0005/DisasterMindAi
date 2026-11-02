@@ -1,0 +1,9 @@
+{
+    "version": "V4",
+    "pooling_radius_degrees": 12,
+    "training_rows": 1018368,
+    "regions": 371,
+    "sampling_method": "Joint empirical row sampling",
+    "preserves_increment_hierarchy": true,
+    "fallback": "Global empirical joint distribution"
+}

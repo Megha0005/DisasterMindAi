@@ -1,0 +1,254 @@
+{
+    "project": "DisasterMind AI",
+    "evaluation_type": "Validation-based experimental generator selection",
+    "created_at_utc": "2026-11-02T18:16:33.201396+00:00",
+    "validation_period": "January 2020 - December 2022",
+    "selected_primary_generator": "V3",
+    "benchmark_generator": "V4",
+    "selection_rationale": [
+        "V4 has lower mean absolute correlation error.",
+        "V4 uses geographic conditional joint empirical sampling.",
+        "V3 provides a strong global empirical baseline.",
+        "Both generators preserve count hierarchy.",
+        "V3 performs slightly better on several marginal distribution metrics."
+    ],
+    "limitations": [
+        "Both generators underestimate some validation means and tails.",
+        "Neither generator has been evaluated on the untouched test period yet.",
+        "V4 is an experimental geographic sampler, not a calibrated earthquake forecasting system.",
+        "Historical sampling does not establish future earthquake probabilities."
+    ],
+    "validation_comparison": {
+        "recent": {
+            "V3": {
+                "ks_statistic": 0.011412377450980338,
+                "mean_error": 0.047806883169934644,
+                "std_error": 0.20420141490130028,
+                "real_tail_rate_ge_10": 0.004404105392156863,
+                "generated_tail_rate_ge_10": 0.0028977736928104576
+            },
+            "V4": {
+                "ks_statistic": 0.011986825980392135,
+                "mean_error": 0.04897492851307189,
+                "std_error": 0.3386250700731779,
+                "real_tail_rate_ge_10": 0.004404105392156863,
+                "generated_tail_rate_ge_10": 0.0028467116013071894
+            }
+        },
+        "previous": {
+            "V3": {
+                "ks_statistic": 0.015446282679738577,
+                "mean_error": 0.09664777369281041,
+                "std_error": 0.13961581872891315,
+                "real_tail_rate_ge_10": 0.012203839869281046,
+                "generated_tail_rate_ge_10": 0.008859272875816993
+            },
+            "V4": {
+                "ks_statistic": 0.01540160334967322,
+                "mean_error": 0.09316278594771232,
+                "std_error": 0.24101259756223747,
+                "real_tail_rate_ge_10": 0.012203839869281046,
+                "generated_tail_rate_ge_10": 0.00904437295751634
+            }
+        },
+        "older": {
+            "V3": {
+                "ks_statistic": 0.016122855392156854,
+                "mean_error": 0.118093852124183,
+                "std_error": 1.0712407795860717,
+                "real_tail_rate_ge_10": 0.019767412173202614,
+                "generated_tail_rate_ge_10": 0.015484579248366014
+            },
+            "V4": {
+                "ks_statistic": 0.01756535947712412,
+                "mean_error": 0.15940308415032678,
+                "std_error": 1.0757639847056,
+                "real_tail_rate_ge_10": 0.019767412173202614,
+                "generated_tail_rate_ge_10": 0.01549734477124183
+            }
+        },
+        "correlation": {
+            "real": [
+                [
+                    1.0,
+                    0.3180741082395243,
+                    0.2558297670571668
+                ],
+                [
+                    0.3180741082395243,
+                    1.0,
+                    0.3681709024224289
+                ],
+                [
+                    0.2558297670571668,
+                    0.3681709024224289,
+                    1.0
+                ]
+            ],
+            "V3": [
+                [
+                    1.0,
+                    0.2479220603952565,
+                    0.1678795804439133
+                ],
+                [
+                    0.24792206039525652,
+                    1.0,
+                    0.29731586063409565
+                ],
+                [
+                    0.1678795804439133,
+                    0.29731586063409565,
+                    0.9999999999999999
+                ]
+            ],
+            "V4": [
+                [
+                    1.0,
+                    0.35360686928661594,
+                    0.24370385552464874
+                ],
+                [
+                    0.3536068692866159,
+                    1.0,
+                    0.41915947183394026
+                ],
+                [
+                    0.24370385552464877,
+                    0.4191594718339403,
+                    1.0
+                ]
+            ],
+            "V3_error": 0.07631909208195152,
+            "V4_error": 0.03288241399704036
+        },
+        "V4_fallback_samples": 0
+    },
+    "test_evaluation_status": "COMPLETED",
+    "final_selection_status": "PROVISIONAL",
+    "selection_status": "SELECTED_AFTER_COMPARATIVE_TEST_EVALUATION",
+    "test_period": "January 2023 - September 2025",
+    "test_evaluation": {
+        "recent": {
+            "V3": {
+                "ks": 0.011426303475935873,
+                "mean_error": 0.06173406862745101,
+                "std_error": 1.5423324237050884,
+                "real_tail_rate_ge_10": 0.003885360962566845,
+                "generated_tail_rate_ge_10": 0.0028269830659536544
+            },
+            "V4": {
+                "ks": 0.012547348484848508,
+                "mean_error": 0.06098206327985742,
+                "std_error": 1.5797364449871667,
+                "real_tail_rate_ge_10": 0.003885360962566845,
+                "generated_tail_rate_ge_10": 0.002785204991087344
+            }
+        },
+        "previous": {
+            "V3": {
+                "ks": 0.0171638257575758,
+                "mean_error": 0.09538630793226377,
+                "std_error": 0.6821171730068603,
+                "real_tail_rate_ge_10": 0.011572526737967914,
+                "generated_tail_rate_ge_10": 0.008724654634581105
+            },
+            "V4": {
+                "ks": 0.016934046345811082,
+                "mean_error": 0.1009079768270944,
+                "std_error": 1.132325819968806,
+                "real_tail_rate_ge_10": 0.011572526737967914,
+                "generated_tail_rate_ge_10": 0.008480949197860962
+            }
+        },
+        "older": {
+            "V3": {
+                "ks": 0.018737466577540052,
+                "mean_error": 0.12297376336898391,
+                "std_error": 0.4280461114745382,
+                "real_tail_rate_ge_10": 0.019781918449197862,
+                "generated_tail_rate_ge_10": 0.015235071301247773
+            },
+            "V4": {
+                "ks": 0.021292892156862697,
+                "mean_error": 0.107891878342246,
+                "std_error": 1.711127942898556,
+                "real_tail_rate_ge_10": 0.019781918449197862,
+                "generated_tail_rate_ge_10": 0.01533255347593583
+            }
+        },
+        "correlation": {
+            "real": [
+                [
+                    1.0,
+                    0.27480192591205305,
+                    0.13493817912171227
+                ],
+                [
+                    0.27480192591205305,
+                    0.9999999999999998,
+                    0.24927703361788442
+                ],
+                [
+                    0.13493817912171227,
+                    0.2492770336178844,
+                    1.0
+                ]
+            ],
+            "V3": [
+                [
+                    0.9999999999999998,
+                    0.25920761667542974,
+                    0.1998819812793847
+                ],
+                [
+                    0.25920761667542974,
+                    1.0,
+                    0.29747762648544346
+                ],
+                [
+                    0.1998819812793847,
+                    0.29747762648544346,
+                    1.0
+                ]
+            ],
+            "V4": [
+                [
+                    1.0,
+                    0.30371218415397866,
+                    0.21255706031852203
+                ],
+                [
+                    0.30371218415397866,
+                    1.0,
+                    0.38609170788345304
+                ],
+                [
+                    0.21255706031852203,
+                    0.38609170788345304,
+                    1.0
+                ]
+            ],
+            "V3_error": 0.04291290142061826,
+            "V4_error": 0.08111460456810134
+        },
+        "V3_hierarchy_valid": true,
+        "V4_hierarchy_valid": true,
+        "test_rows": 143616,
+        "fallback_samples": 0,
+        "test_period": "January 2023 - September 2025"
+    },
+    "final_decision_rationale": [
+        "V3 achieved lower KS statistics for recent and older increments.",
+        "V4 achieved a marginally lower KS statistic for previous increments.",
+        "V3 achieved lower mean absolute correlation error.",
+        "Both generators preserved count hierarchy.",
+        "Both generators underestimated the frequency of large counts."
+    ],
+    "scientific_caveat": [
+        "The test results were used for comparative model selection.",
+        "They should not be presented as an independent unbiased estimate after model selection.",
+        "No further tuning should be performed using this test dataset.",
+        "An additional future-period holdout would be needed for independent confirmation."
+    ]
+}
