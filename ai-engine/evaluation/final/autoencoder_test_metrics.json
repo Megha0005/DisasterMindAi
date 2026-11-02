@@ -1,0 +1,14 @@
+{
+    "threshold": 0.5387887954711914,
+    "test_samples": 143616,
+    "test_positive_samples": 15184,
+    "overall_positive_rate": 0.10572638146167558,
+    "mean_reconstruction_error": 0.07369285076856613,
+    "anomaly_count": 1833,
+    "anomaly_percentage": 1.2763201871657754,
+    "anomaly_positive_count": 604,
+    "anomaly_negative_count": 1229,
+    "anomaly_positive_rate": 0.32951445717403166,
+    "anomaly_recall": 0.03977871443624868,
+    "enrichment_ratio": 3.1166720417219262
+}

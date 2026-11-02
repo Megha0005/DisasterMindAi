@@ -1,0 +1,20 @@
+{
+    "model_name": "HistGradientBoosting",
+    "iterations_used": 120,
+    "default_threshold_metrics": {
+        "threshold": 0.5,
+        "roc_auc": 0.8983040982099729,
+        "pr_auc": 0.6562438312757413,
+        "precision": 0.3751186024446057,
+        "recall": 0.8038031453686539,
+        "f1_score": 0.5115208250090378
+    },
+    "best_validation_threshold_metrics": {
+        "threshold": 0.8085671053875114,
+        "roc_auc": 0.8983040982099729,
+        "pr_auc": 0.6562438312757413,
+        "precision": 0.6253578471912972,
+        "recall": 0.587813191413024,
+        "f1_score": 0.606004561987547
+    }
+}

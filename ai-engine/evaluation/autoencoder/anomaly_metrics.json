@@ -1,0 +1,23 @@
+{
+    "model_name": "DisasterAutoencoder",
+    "threshold_method": "99th percentile of training reconstruction errors",
+    "threshold": 0.5387887954711914,
+    "training_reconstruction": {
+        "mean": 0.061546992510557175,
+        "median": 0.021532811224460602,
+        "std": 0.1165708526968956,
+        "anomaly_count": 10184,
+        "anomaly_percentage": 1.0000314228255405
+    },
+    "validation_reconstruction": {
+        "mean": 0.06942548602819443,
+        "median": 0.025364793837070465,
+        "std": 0.12374018132686615,
+        "anomaly_count": 2117,
+        "anomaly_percentage": 1.351230596405229
+    },
+    "validation_anomaly_overlap": {
+        "anomalies_with_positive_next_month": 716,
+        "anomalies_with_negative_next_month": 1401
+    }
+}

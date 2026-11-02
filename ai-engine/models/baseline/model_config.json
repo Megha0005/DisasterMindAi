@@ -1,0 +1,17 @@
+{
+  "model_name": "Logistic Regression",
+  "version": "1.0.0",
+  "target": "target_next_month",
+  "prediction_horizon": "1 month",
+  "grid_resolution_degrees": 2,
+  "historical_windows_months": [1, 3, 6],
+  "classification_threshold": 0.784315,
+  "threshold_selection_metric": "validation_f1",
+  "validation_metrics": {
+    "roc_auc": 0.8634,
+    "pr_auc": 0.6157,
+    "precision": 0.5745,
+    "recall": 0.6068,
+    "f1_score": 0.5902
+  }
+}

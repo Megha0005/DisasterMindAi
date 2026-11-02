@@ -1,0 +1,28 @@
+[
+    {
+        "model_name": "Logistic Regression",
+        "threshold": 0.784315,
+        "roc_auc": 0.8661977755602042,
+        "pr_auc": 0.6119806278353602,
+        "precision": 0.5648301701369695,
+        "recall": 0.6056375131717597,
+        "f1_score": 0.5845224853011283,
+        "true_negatives": 121347,
+        "false_positives": 7085,
+        "false_negatives": 5988,
+        "true_positives": 9196
+    },
+    {
+        "model_name": "HistGradientBoosting",
+        "threshold": 0.8086,
+        "roc_auc": 0.8986679542600592,
+        "pr_auc": 0.6547642348448209,
+        "precision": 0.6209739397750297,
+        "recall": 0.5853530031612223,
+        "f1_score": 0.6026375563616639,
+        "true_negatives": 123007,
+        "false_positives": 5425,
+        "false_negatives": 6296,
+        "true_positives": 8888
+    }
+]

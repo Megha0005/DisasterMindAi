@@ -1,0 +1,13 @@
+{
+    "model_name": "DisasterMLP",
+    "threshold": 0.7832309603691101,
+    "roc_auc": 0.8791430028743055,
+    "pr_auc": 0.6387557294167208,
+    "precision": 0.6164529914529915,
+    "recall": 0.5700079030558483,
+    "f1_score": 0.5923213796879278,
+    "true_negatives": 123047,
+    "false_positives": 5385,
+    "false_negatives": 6529,
+    "true_positives": 8655
+}

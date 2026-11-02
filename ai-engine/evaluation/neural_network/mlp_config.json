@@ -1,0 +1,21 @@
+{
+    "model_name": "DisasterMLP",
+    "version": "1.0.0",
+    "target": "target_next_month",
+    "prediction_horizon": "1 month",
+    "grid_resolution_degrees": 2,
+    "historical_windows_months": [
+        1,
+        3,
+        6
+    ],
+    "classification_threshold": 0.7832309603691101,
+    "threshold_selection_metric": "validation_f1",
+    "validation_metrics": {
+        "roc_auc": 0.8764403857138948,
+        "pr_auc": 0.6405510560767622,
+        "precision": 0.621877635762019,
+        "recall": 0.5731627100400646,
+        "f1_score": 0.5965272591486184
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "model_name": "DisasterAutoencoder",
+    "input_features": 8,
+    "latent_dimensions": 3,
+    "best_epoch": 20,
+    "best_validation_mse": 0.06942548149941015,
+    "training_samples": 1018368,
+    "validation_samples": 156672
+}

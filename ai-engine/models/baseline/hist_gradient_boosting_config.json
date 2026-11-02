@@ -1,0 +1,23 @@
+{
+  "model_name": "HistGradientBoostingClassifier",
+  "version": "1.0.0",
+  "target": "target_next_month",
+  "prediction_horizon": "1 month",
+  "grid_resolution_degrees": 2,
+  "historical_windows_months": [1, 3, 6],
+  "parameters": {
+    "max_iter": 120,
+    "learning_rate": 0.08,
+    "max_leaf_nodes": 31,
+    "l2_regularization": 1.0
+  },
+  "classification_threshold": 0.8086,
+  "threshold_selection_metric": "validation_f1",
+  "validation_metrics": {
+    "roc_auc": 0.8983,
+    "pr_auc": 0.6562,
+    "precision": 0.6254,
+    "recall": 0.5878,
+    "f1_score": 0.606
+  }
+}
