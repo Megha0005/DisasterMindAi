@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+﻿import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Dashboard from "./pages/Dashboard";
 import DisasterMap from "./pages/DisasterMap";
@@ -7,6 +7,7 @@ import ScenarioGenerator from "./pages/ScenarioGenerator";
 import DeepLearningLab from "./pages/DeepLearningLab";
 import ProbabilisticModels from "./pages/ProbabilisticModels";
 import Reports from "./pages/Reports";
+import Settings from "./pages/Settings";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/deep-learning" element={<AppLayout><DeepLearningLab /></AppLayout>} />
         <Route path="/probabilistic-models" element={<AppLayout><ProbabilisticModels /></AppLayout>} />
         <Route path="/reports" element={<AppLayout><Reports /></AppLayout>} />
+        <Route path="/settings" element={<AppLayout><Settings /></AppLayout>} />
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
