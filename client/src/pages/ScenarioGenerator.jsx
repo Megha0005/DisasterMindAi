@@ -1,11 +1,23 @@
 import { useMemo, useState } from "react";
 import {
-  Activity, MapPin, Sparkles, Database, RefreshCw,
-  AlertTriangle, BarChart3, Layers, Download
+  Activity,
+  MapPin,
+  Sparkles,
+  Database,
+  RefreshCw,
+  AlertTriangle,
+  BarChart3,
+  Layers,
+  Download,
 } from "lucide-react";
 import {
-  ResponsiveContainer, BarChart, Bar, XAxis, YAxis,
-  CartesianGrid, Tooltip
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
 } from "recharts";
 import { aiService } from "../services/aiService";
 
@@ -14,7 +26,7 @@ export default function ScenarioGenerator() {
     scenario_name: "Earthquake Scenario",
     latitude: "20.5",
     longitude: "79.2",
-    n_scenarios: "100"
+    n_scenarios: "100",
   });
 
   const [result, setResult] = useState(null);
@@ -61,15 +73,15 @@ export default function ScenarioGenerator() {
         scenario_name: form.scenario_name.trim(),
         latitude,
         longitude,
-        n_scenarios: n
+        n_scenarios: n,
       });
       setResult(data);
     } catch (err) {
       setError(
         err.response?.data?.detail ||
-        err.response?.data?.message ||
-        err.message ||
-        "Unable to generate scenarios. Check that all services are running."
+          err.response?.data?.message ||
+          err.message ||
+          "Unable to generate scenarios. Check that all services are running.",
       );
     } finally {
       setLoading(false);
@@ -84,12 +96,13 @@ export default function ScenarioGenerator() {
     const average = (key) =>
       records.reduce((sum, item) => sum + item[key], 0) / records.length;
 
-    const maximum = (key) =>
-      Math.max(...records.map((item) => item[key]));
+    const maximum = (key) => Math.max(...records.map((item) => item[key]));
 
     const allZero = records.filter(
-      (item) => item.past_1m_count === 0 &&
-        item.past_3m_count === 0 && item.past_6m_count === 0
+      (item) =>
+        item.past_1m_count === 0 &&
+        item.past_3m_count === 0 &&
+        item.past_6m_count === 0,
     ).length;
 
     return {
@@ -99,29 +112,37 @@ export default function ScenarioGenerator() {
       max6: maximum("past_6m_count"),
       allZero,
       unique: new Set(
-        records.map((item) =>
-          `${item.past_1m_count}-${item.past_3m_count}-${item.past_6m_count}`
-        )
-      ).size
+        records.map(
+          (item) =>
+            `${item.past_1m_count}-${item.past_3m_count}-${item.past_6m_count}`,
+        ),
+      ).size,
     };
   }, [records]);
 
-  const chartData = stats ? [
-    { period: "Past 1 month", average: Number(stats.avg1.toFixed(3)) },
-    { period: "Past 3 months", average: Number(stats.avg3.toFixed(3)) },
-    { period: "Past 6 months", average: Number(stats.avg6.toFixed(3)) }
-  ] : [];
+  const chartData = stats
+    ? [
+        { period: "Past 1 month", average: Number(stats.avg1.toFixed(3)) },
+        { period: "Past 3 months", average: Number(stats.avg3.toFixed(3)) },
+        { period: "Past 6 months", average: Number(stats.avg6.toFixed(3)) },
+      ]
+    : [];
 
   const downloadCSV = () => {
     if (!records.length) return;
 
     const columns = [
-      "scenario_id", "scenario_type", "grid_lat", "grid_lon",
-      "past_1m_count", "past_3m_count", "past_6m_count"
+      "scenario_id",
+      "scenario_type",
+      "grid_lat",
+      "grid_lon",
+      "past_1m_count",
+      "past_3m_count",
+      "past_6m_count",
     ];
 
     const rows = records.map((item) =>
-      columns.map((key) => item[key]).join(",")
+      columns.map((key) => item[key]).join(","),
     );
 
     const csv = [columns.join(","), ...rows].join("\n");
@@ -140,7 +161,10 @@ export default function ScenarioGenerator() {
         <div>
           <span className="scenario-eyebrow">PROBABILISTIC MODELLING</span>
           <h1>Scenario Generator</h1>
-          <p>Generate synthetic earthquake-count patterns using the V3 empirical model.</p>
+          <p>
+            Generate synthetic earthquake-count patterns using the V3 empirical
+            model.
+          </p>
         </div>
         <div className="scenario-model-tag">
           <Activity size={16} />
@@ -151,7 +175,9 @@ export default function ScenarioGenerator() {
       <section className="scenario-layout">
         <form className="scenario-panel scenario-form" onSubmit={generate}>
           <div className="scenario-panel-heading">
-            <div className="scenario-icon"><Sparkles size={20} /></div>
+            <div className="scenario-icon">
+              <Sparkles size={20} />
+            </div>
             <div>
               <h3>Generation parameters</h3>
               <p>Configure your synthetic scenario batch</p>
@@ -216,7 +242,10 @@ export default function ScenarioGenerator() {
 
           <div className="scenario-location-note">
             <MapPin size={17} />
-            <span>The selected coordinates identify a 2� � 2� display grid. They do not condition the generator's sampling.</span>
+            <span>
+              The selected coordinates identify a 2{"\u00B0"} x 2{"\u00B0"}{" "}
+              display grid. They do not condition the generator's sampling.
+            </span>
           </div>
 
           {error && (
@@ -226,20 +255,34 @@ export default function ScenarioGenerator() {
             </div>
           )}
 
-          <button className="scenario-generate-btn" type="submit" disabled={loading}>
+          <button
+            className="scenario-generate-btn"
+            type="submit"
+            disabled={loading}
+          >
             {loading ? (
-              <><RefreshCw size={17} className="scenario-spin" /> Generating scenarios...</>
+              <>
+                <RefreshCw size={17} className="scenario-spin" /> Generating
+                scenarios...
+              </>
             ) : (
-              <><Sparkles size={17} /> Generate scenarios</>
+              <>
+                <Sparkles size={17} /> Generate scenarios
+              </>
             )}
           </button>
 
-          <p className="scenario-limit">Generation uses historical empirical count increments. It does not forecast future events.</p>
+          <p className="scenario-limit">
+            Generation uses historical empirical count increments. It does not
+            forecast future events.
+          </p>
         </form>
 
         <section className="scenario-panel scenario-output">
           <div className="scenario-panel-heading">
-            <div className="scenario-icon"><Database size={20} /></div>
+            <div className="scenario-icon">
+              <Database size={20} />
+            </div>
             <div>
               <h3>Generation results</h3>
               <p>Live response from the AI Engine</p>
@@ -248,9 +291,14 @@ export default function ScenarioGenerator() {
 
           {!result ? (
             <div className="scenario-empty">
-              <div className="scenario-empty-icon"><Layers size={34} /></div>
+              <div className="scenario-empty-icon">
+                <Layers size={34} />
+              </div>
               <h3>Ready to generate</h3>
-              <p>Configure your parameters and generate a batch to view its synthetic count patterns and statistics.</p>
+              <p>
+                Configure your parameters and generate a batch to view its
+                synthetic count patterns and statistics.
+              </p>
             </div>
           ) : (
             <>
@@ -260,16 +308,36 @@ export default function ScenarioGenerator() {
               </div>
 
               <div className="scenario-meta">
-                <div><span>Model</span><strong>{result.model}</strong></div>
-                <div><span>Method</span><strong>Empirical joint sampling</strong></div>
-                <div><span>Scenario</span><strong>{result.scenario_name}</strong></div>
-                <div><span>Unique patterns</span><strong>{stats.unique}</strong></div>
+                <div>
+                  <span>Model</span>
+                  <strong>{result.model}</strong>
+                </div>
+                <div>
+                  <span>Method</span>
+                  <strong>Empirical joint sampling</strong>
+                </div>
+                <div>
+                  <span>Scenario</span>
+                  <strong>{result.scenario_name}</strong>
+                </div>
+                <div>
+                  <span>Unique patterns</span>
+                  <strong>{stats.unique}</strong>
+                </div>
               </div>
 
               <div className="scenario-grid-info">
-                <span>SELECTED 2� � 2� GRID</span>
-                <strong>{records[0]?.latitude_range?.[0]}��{records[0]?.latitude_range?.[1]}� N/S</strong>
-                <strong>{records[0]?.longitude_range?.[0]}��{records[0]?.longitude_range?.[1]}� E/W</strong>
+                <span>
+                  SELECTED 2{"\u00B0"} × 2{"\u00B0"} GRID
+                </span>
+                <strong>
+                  {records[0]?.latitude_range?.[0]}° to{" "}
+                  {records[0]?.latitude_range?.[1]}° N/S
+                </strong>
+                <strong>
+                  {records[0]?.longitude_range?.[0]}° to{" "}
+                  {records[0]?.longitude_range?.[1]}° E/W
+                </strong>
               </div>
 
               <div className="scenario-disclaimer">
@@ -296,7 +364,9 @@ export default function ScenarioGenerator() {
             </div>
             <div className="scenario-stat-card">
               <span>All-zero patterns</span>
-              <strong>{((stats.allZero / records.length) * 100).toFixed(1)}%</strong>
+              <strong>
+                {((stats.allZero / records.length) * 100).toFixed(1)}%
+              </strong>
               <small>{stats.allZero} records</small>
             </div>
             <div className="scenario-stat-card">
@@ -308,7 +378,9 @@ export default function ScenarioGenerator() {
 
           <section className="scenario-panel scenario-chart-panel">
             <div className="scenario-panel-heading">
-              <div className="scenario-icon"><BarChart3 size={20} /></div>
+              <div className="scenario-icon">
+                <BarChart3 size={20} />
+              </div>
               <div>
                 <h3>Average generated counts</h3>
                 <p>Mean synthetic count for each historical window</p>
@@ -316,15 +388,31 @@ export default function ScenarioGenerator() {
             </div>
             <div className="scenario-chart">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={chartData} margin={{ top: 15, right: 15, left: 0, bottom: 5 }}>
+                <BarChart
+                  data={chartData}
+                  margin={{ top: 15, right: 15, left: 0, bottom: 5 }}
+                >
                   <CartesianGrid strokeDasharray="3 3" stroke="#26364a" />
-                  <XAxis dataKey="period" stroke="#8da2bd" tick={{ fontSize: 12 }} />
+                  <XAxis
+                    dataKey="period"
+                    stroke="#8da2bd"
+                    tick={{ fontSize: 12 }}
+                  />
                   <YAxis stroke="#8da2bd" tick={{ fontSize: 12 }} />
                   <Tooltip
-                    contentStyle={{ background: "#101c2c", border: "1px solid #304158", borderRadius: 8 }}
+                    contentStyle={{
+                      background: "#101c2c",
+                      border: "1px solid #304158",
+                      borderRadius: 8,
+                    }}
                     labelStyle={{ color: "#fff" }}
                   />
-                  <Bar dataKey="average" name="Average count" fill="#43c7ae" radius={[6, 6, 0, 0]} />
+                  <Bar
+                    dataKey="average"
+                    name="Average count"
+                    fill="#43c7ae"
+                    radius={[6, 6, 0, 0]}
+                  />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -333,13 +421,19 @@ export default function ScenarioGenerator() {
           <section className="scenario-panel scenario-table-panel">
             <div className="scenario-table-heading">
               <div className="scenario-panel-heading">
-                <div className="scenario-icon"><Database size={20} /></div>
+                <div className="scenario-icon">
+                  <Database size={20} />
+                </div>
                 <div>
                   <h3>Generated scenario records</h3>
                   <p>Showing up to 100 records from the generated batch</p>
                 </div>
               </div>
-              <button className="scenario-export-btn" onClick={downloadCSV} type="button">
+              <button
+                className="scenario-export-btn"
+                onClick={downloadCSV}
+                type="button"
+              >
                 <Download size={16} /> Export CSV
               </button>
             </div>
@@ -371,7 +465,10 @@ export default function ScenarioGenerator() {
               </table>
             </div>
             {records.length > 100 && (
-              <p className="scenario-table-footnote">Showing first 100 of {records.length} records. Export CSV to access the complete batch.</p>
+              <p className="scenario-table-footnote">
+                Showing first 100 of {records.length} records. Export CSV to
+                access the complete batch.
+              </p>
             )}
           </section>
         </>
