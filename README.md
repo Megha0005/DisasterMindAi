@@ -1323,10 +1323,14 @@ It provides a practical example of applying AI and software engineering to a rea
 
 - PyTorch: [https://pytorch.org/](https://pytorch.org/)
 
+
 ## 24. License
 
-Add an appropriate open-source license before publishing this repository.
+This project is licensed under the MIT License.
 
-Without a license, users should not assume permission to reuse, modify, or redistribute the project.
+You are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of this software, subject to the conditions of the MIT License.
 
-DisasterMind AI — Turning Historical Disaster Data into Analytical Intelligence.
+See the [LICENSE](LICENSE) file for the full license text.
+
+Copyright (c) 2026 Megha Kirpan
+
