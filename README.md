@@ -131,23 +131,14 @@ AND DATASETS
 ### Architecture Components
 
 | Component     | Responsibility              |
-
 | ------------- | --------------------------- |
-
 | React + Vite  | Frontend and user interface |
-
 | Node.js       | Backend runtime             |
-
 | Express.js    | REST APIs and gateway       |
-
 | MongoDB Atlas | User database               |
-
 | Python        | AI and data processing      |
-
 | FastAPI       | AI service APIs             |
-
 | Scikit-learn  | Machine Learning            |
-
 | PyTorch       | Deep Learning               |
 
 ## 5. Technologies Used and Why
@@ -327,19 +318,12 @@ Historical earthquake data from 2000 to 2025 was used, with a target magnitude t
 ### Dataset Summary
 
 | Description                    | Count     |
-
 | ------------------------------ | --------- |
-
 | Raw earthquake records         | 357,841   |
-
 | Cleaned records                | 357,840   |
-
 | Geographical grid cells        | 4,352     |
-
 | Grid-cell monthly observations | 1,318,656 |
-
 | Negative observations          | 90.28%    |
-
 | Positive observations          | 9.72%     |
 
 ### Processing Steps
@@ -365,13 +349,9 @@ Historical earthquake data from 2000 to 2025 was used, with a target magnitude t
 ### Dataset Split
 
 | Dataset    | Period                        |
-
 | ---------- | ----------------------------- |
-
 | Training   | July 2000 – December 2019     |
-
 | Validation | January 2020 – December 2022  |
-
 | Testing    | January 2023 – September 2025 |
 
 Chronological splitting helps evaluate performance on later periods.
@@ -399,29 +379,19 @@ It estimates whether a geographical 2° × 2° grid cell will experience at leas
 Test Results:
 
 | Metric    | Result   |
-
 | --------- | -------- |
-
 | ROC-AUC   | 0.898668 |
-
 | PR-AUC    | 0.654764 |
-
 | Precision | 0.620974 |
-
 | Recall    | 0.585353 |
-
 | F1-score  | 0.602638 |
-
 | Threshold | 0.8086   |
 
 Confusion Matrix:
 
 |                 | Predicted Negative | Predicted Positive |
-
 | --------------- | ------------------ | ------------------ |
-
 | Actual Negative | 123007             | 5425               |
-
 | Actual Positive | 6296               | 8888               |
 
 ### 7.2 Logistic Regression
@@ -439,13 +409,9 @@ Why selected:
 Results:
 
 | Metric   | Result   |
-
 | -------- | -------- |
-
 | ROC-AUC  | 0.866198 |
-
 | PR-AUC   | 0.611981 |
-
 | F1-score | 0.584522 |
 
 ### 7.3 Multi-Layer Perceptron (MLP)
@@ -461,13 +427,9 @@ Why selected:
 Results:
 
 | Metric   | Result |
-
 | -------- | ------ |
-
 | ROC-AUC  | 0.8791 |
-
 | PR-AUC   | 0.6388 |
-
 | F1-score | 0.5923 |
 
 ### 7.4 Autoencoder
@@ -775,19 +737,12 @@ DisasterMind-AI/
 Install:
 
 | Software      | Purpose                 |
-
 | ------------- | ----------------------- |
-
 | Git           | Clone repository        |
-
 | Node.js       | Frontend and backend    |
-
 | npm           | JavaScript dependencies |
-
 | Python 3.13   | AI engine               |
-
 | MongoDB Atlas | Cloud database          |
-
 | VS Code       | Development             |
 
 Recommended hardware:
@@ -1145,19 +1100,12 @@ npm run dev
 ### Python AI Engine
 
 | Method | Endpoint                         | Purpose                              |
-
 | ------ | -------------------------------- | ------------------------------------ |
-
 | GET    | `/`                              | Service information                  |
-
 | GET    | `/health`                        | Health check                         |
-
 | GET    | `/gpu`                           | GPU status                           |
-
 | POST   | `/api/v1/predictions/earthquake` | Earthquake occurrence classification |
-
 | POST   | `/api/v1/generator/counts`       | Synthetic count generation           |
-
 | POST   | `/api/v1/scenarios/generate`     | Scenario generation                  |
 
 Swagger documentation:
@@ -1167,15 +1115,10 @@ Swagger documentation:
 ### Node.js Backend
 
 | Method  | Endpoint             | Purpose           |
-
 | ------- | -------------------- | ----------------- |
-
 | POST    | `/api/auth/register` | User registration |
-
 | POST    | `/api/auth/login`    | User login        |
-
 | GET     | `/api/health`        | Backend health    |
-
 | Various | `/api/ai`            | AI gateway routes |
 
 ## 19. Dependencies and Libraries
@@ -1183,73 +1126,43 @@ Swagger documentation:
 ### Frontend
 
 | Package          | Purpose               |
-
 | ---------------- | --------------------- |
-
 | react            | UI development        |
-
 | react-dom        | DOM rendering         |
-
 | vite             | Development and build |
-
 | react-router-dom | Navigation            |
-
 | axios            | API communication     |
-
 | leaflet          | Maps                  |
-
 | react-leaflet    | React map integration |
-
 | recharts         | Charts                |
-
 | lucide-react     | Icons                 |
 
 ### Backend
 
 | Package      | Purpose                   |
-
 | ------------ | ------------------------- |
-
 | express      | REST API                  |
-
 | mongoose     | MongoDB modelling         |
-
 | bcryptjs     | Password hashing          |
-
 | jsonwebtoken | Authentication            |
-
 | dotenv       | Environment configuration |
-
 | cors         | Cross-origin requests     |
 
 ### Python
 
 | Library      | Purpose                             |
-
 | ------------ | ----------------------------------- |
-
 | fastapi      | AI API framework                    |
-
 | uvicorn      | ASGI server                         |
-
 | numpy        | Numerical computation               |
-
 | pandas       | Data processing                     |
-
 | scipy        | Scientific computation              |
-
 | scikit-learn | Machine Learning                    |
-
 | torch        | Deep Learning                       |
-
 | joblib       | Model serialization                 |
-
 | pydantic     | Data validation                     |
-
 | matplotlib   | Visualization                       |
-
 | plotly       | Interactive visualization           |
-
 | pgmpy        | Probabilistic modelling experiments |
 
 Exact installed versions are defined by the project's dependency files.
